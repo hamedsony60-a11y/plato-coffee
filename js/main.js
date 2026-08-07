@@ -1,13 +1,13 @@
 // ===== Products data for search =====
 const PRODUCTS = [
-    { id: 1, name: 'آسیاب قهوه دستی', cat: 'تجهیزات قهوه', price: '۱,۲۵۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=100&q=80' },
-    { id: 2, name: 'پیچر استیل ۶۰۰ میلی', cat: 'تجهیزات باریستا', price: '۴۸۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=100&q=80' },
-    { id: 3, name: 'اسپرسوساز دلونگی', cat: 'ماشین‌های قهوه', price: '۱۲,۹۰۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=100&q=80' },
-    { id: 4, name: 'دانه قهوه ۲۵۰ گرمی اتیوپی', cat: 'دانه‌های تخصصی', price: '۳۸۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=100&q=80' },
-    { id: 5, name: 'موکاپات بیالتی ۶ کاپ', cat: 'تجهیزات کلاسیک', price: '۹۸۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=100&q=80' },
-    { id: 6, name: 'دانه قهوه کلمبیا', cat: 'دانه‌های تخصصی', price: '۴۲۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=100&q=80' },
-    { id: 7, name: 'فرنچ پرس شیشه‌ای', cat: 'تجهیزات قهوه', price: '۶۵۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=100&q=80' },
-    { id: 8, name: 'فیلتر کاغذی V60', cat: 'لوازم جانبی', price: '۹۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?w=100&q=80' }
+    { id: 1, name: 'آسیاب قهوه دستی', cat: 'تجهیزات قهوه', price: '۱,۲۵۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=100&q=80', url: 'product-1.html' },
+    { id: 2, name: 'پیچر استیل ۶۰۰ میلی', cat: 'تجهیزات باریستا', price: '۴۸۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=100&q=80', url: 'product-2.html' },
+    { id: 3, name: 'اسپرسوساز دلونگی', cat: 'ماشین‌های قهوه', price: '۱۲,۹۰۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=100&q=80', url: 'product-3.html' },
+    { id: 4, name: 'دانه قهوه ۲۵۰ گرمی اتیوپی', cat: 'دانه‌های تخصصی', price: '۳۸۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=100&q=80', url: 'product-4.html' },
+    { id: 5, name: 'موکاپات بیالتی ۶ کاپ', cat: 'تجهیزات کلاسیک', price: '۹۸۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=100&q=80', url: 'product-5.html' },
+    { id: 6, name: 'دانه قهوه کلمبیا', cat: 'دانه‌های تخصصی', price: '۴۲۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=100&q=80', url: 'product-6.html' },
+    { id: 7, name: 'فرنچ پرس شیشه‌ای', cat: 'تجهیزات قهوه', price: '۶۵۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=100&q=80', url: 'product-7.html' },
+    { id: 8, name: 'فیلتر کاغذی V60', cat: 'لوازم جانبی', price: '۹۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?w=100&q=80', url: 'product-8.html' }
 ];
 
 // ===== Cart & Wishlist =====
@@ -37,7 +37,7 @@ function showToast(msg) {
     setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// ===== Auth (localStorage) =====
+// ===== Auth =====
 function getUser() {
     try { return JSON.parse(localStorage.getItem('plato_user') || 'null'); }
     catch { return null; }
@@ -52,18 +52,14 @@ function updateUserUI() {
     const user = getUser();
     document.querySelectorAll('[data-user-area]').forEach(el => {
         if (user) {
-            el.innerHTML = `
-                <a href="account.html" class="icon-btn" title="${user.name}" style="gap:4px;width:auto;padding:0 8px">
-                    <i class="fas fa-user"></i>
-                    <span class="header-user-name">${user.name.split(' ')[0]}</span>
-                </a>`;
+            el.innerHTML = `<a href="account.html" class="icon-btn" title="${user.name}" style="gap:4px;width:auto;padding:0 8px"><i class="fas fa-user"></i><span class="header-user-name">${user.name.split(' ')[0]}</span></a>`;
         } else {
             el.innerHTML = `<a href="login.html" class="icon-btn" aria-label="حساب کاربری"><i class="far fa-user"></i></a>`;
         }
     });
 }
 
-// ===== Search Overlay =====
+// ===== Search =====
 function initSearch() {
     const overlay = document.getElementById('searchOverlay');
     const input = document.getElementById('searchInput');
@@ -94,15 +90,16 @@ function initSearch() {
             results.innerHTML = '<div class="search-empty">نتیجه‌ای یافت نشد ☕</div>';
             return;
         }
-        results.innerHTML = matched.map(p => `
-            <div class="search-result-item" onclick="location.href='shop.html'">
+        results.innerHTML = matched.map(p => {
+            const url = p.url || 'shop.html';
+            return `<div class="search-result-item" onclick="location.href='${url}'">
                 <img src="${p.img}" alt="${p.name}">
                 <div class="info"><h4>${p.name}</h4><span>${p.cat} · ${p.price}</span></div>
-            </div>`).join('');
+            </div>`;
+        }).join('');
     });
 }
 
-// ===== Mobile Menu =====
 function initMobileMenu() {
     const btn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
@@ -115,7 +112,6 @@ function initMobileMenu() {
     });
 }
 
-// ===== Wishlist =====
 function initWishlist() {
     document.querySelectorAll('.wishlist-btn').forEach(btn => {
         const id = btn.dataset.id;
@@ -142,7 +138,6 @@ function initWishlist() {
     });
 }
 
-// ===== Add to cart =====
 function initAddToCart() {
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -156,7 +151,6 @@ function initAddToCart() {
     });
 }
 
-// ===== Newsletter =====
 function initNewsletter() {
     document.querySelectorAll('.newsletter-form').forEach(form => {
         form.addEventListener('submit', e => {
@@ -170,7 +164,6 @@ function initNewsletter() {
     });
 }
 
-// ===== Contact form =====
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -181,11 +174,9 @@ function initContactForm() {
     });
 }
 
-// ===== Login / Register =====
 function initAuthForms() {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
-
     if (loginForm) {
         loginForm.addEventListener('submit', e => {
             e.preventDefault();
@@ -198,12 +189,12 @@ function initAuthForms() {
                 setUser({ name: found.name, email: found.email });
                 showToast('ورود موفق! خوش آمدید ☕');
                 setTimeout(() => location.href = 'account.html', 800);
-            } else {
-                if (err) { err.textContent = 'ایمیل یا رمز عبور اشتباه است'; err.classList.add('show'); }
+            } else if (err) {
+                err.textContent = 'ایمیل یا رمز عبور اشتباه است';
+                err.classList.add('show');
             }
         });
     }
-
     if (registerForm) {
         registerForm.addEventListener('submit', e => {
             e.preventDefault();
@@ -232,7 +223,6 @@ function initAuthForms() {
             setTimeout(() => location.href = 'account.html', 800);
         });
     }
-
     document.querySelectorAll('[data-logout]').forEach(btn => {
         btn.addEventListener('click', e => {
             e.preventDefault();
@@ -243,7 +233,6 @@ function initAuthForms() {
     });
 }
 
-// ===== Account page protect =====
 function protectAccountPage() {
     if (location.pathname.includes('account.html') || document.body.dataset.page === 'account') {
         if (!isLoggedIn()) {
@@ -258,7 +247,6 @@ function protectAccountPage() {
     }
 }
 
-// ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
     updateBadges();
     updateUserUI();
