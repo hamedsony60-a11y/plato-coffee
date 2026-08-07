@@ -1,97 +1,168 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آسیاب قهوه دستی | قهوه پلاتو</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/product.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آسیاب قهوه دستی | قهوه پلاتو</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/product.css">
 </head>
 <body>
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-box">
-            <div class="search-input-wrap">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="جستجوی محصول..." autocomplete="off">
-                <button class="search-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="search-results" id="searchResults"></div>
-        </div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="جستجوی محصول..." autocomplete="off">
+      <button class="search-close"><i class="fas fa-times"></i></button>
     </div>
-    <header class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo"><a href="index.html"><span class="logo-icon">☕</span><span class="logo-text">قهوه پلاتو</span></a></div>
-                <nav class="nav"><ul>
-                    <li><a href="index.html">خانه</a></li>
-                    <li><a href="shop.html" class="active">فروشگاه</a></li>
-                    <li><a href="about.html">درباره ما</a></li>
-                    <li><a href="education.html">آموزش</a></li>
-                    <li><a href="blog.html">وبلاگ</a></li>
-                    <li><a href="contact.html">تماس با ما</a></li>
-                </ul></nav>
-                <div class="header-actions">
-                    <button class="icon-btn" data-search-open><i class="fas fa-search"></i></button>
-                    <span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span>
-                    <button class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
-                </div>
-                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <div class="logo"><a href="index.html"><span class="logo-icon">☕</span><span class="logo-text">قهوه پلاتو</span></a></div>
+      <nav class="nav"><ul>
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="shop.html" class="active">فروشگاه</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+        <li><a href="education.html">آموزش</a></li>
+        <li><a href="blog.html">وبلاگ</a></li>
+        <li><a href="contact.html">تماس با ما</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <button class="icon-btn" data-search-open><i class="fas fa-search"></i></button>
+        <span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span>
+        <button class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+      </div>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+<div class="pd-breadcrumb">
+  <div class="container">
+    <a href="index.html">خانه</a><i class="fas fa-chevron-left"></i>
+    <a href="shop.html">فروشگاه</a><i class="fas fa-chevron-left"></i>
+    <span>آسیاب قهوه دستی</span>
+  </div>
+</div>
+<section class="pd-main">
+  <div class="container">
+    <div class="pd-grid">
+      <div class="pd-gallery">
+        <div class="pd-main-img">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&q=85" alt="آسیاب قهوه دستی" id="mainImg">
+          <span class="pd-badge-img">۲۰٪ تخفیف</span>
         </div>
-    </header>
-
-    <section class="page-banner">
-        <div class="container">
-            <h1>آسیاب قهوه دستی</h1>
-            <div class="breadcrumb">
-                <a href="index.html">خانه</a> / <a href="shop.html">فروشگاه</a> / <span>آسیاب قهوه دستی</span>
-            </div>
+        <div class="pd-thumbs">
+          <button class="pd-thumb active" onclick="document.getElementById('mainImg').src='https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&q=85'"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&q=80" alt=""></button>
+          <button class="pd-thumb" onclick="document.getElementById('mainImg').src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80'"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt=""></button>
+          <button class="pd-thumb" onclick="document.getElementById('mainImg').src='https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80'"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80" alt=""></button>
         </div>
-    </section>
-
-    <section class="product-detail">
-        <div class="container">
-            <div class="product-detail-grid">
-                <div class="product-detail-image">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=85" alt="آسیاب قهوه دستی">
-                </div>
-                <div class="product-detail-info">
-                    <h1>آسیاب قهوه دستی</h1>
-                    <p class="cat">تجهیزات قهوه</p>
-                    <div class="price-box">
-                        <span class="price-current">۱,۲۵۰,۰۰۰ تومان</span>
-                        <span class="price-old">۱,۵۶۰,۰۰۰ تومان</span>
-                        <span class="badge-off">۲۰٪ تخفیف</span>
-                    </div>
-                    <p class="desc">آسیاب دستی قهوه با بدنه استیل ضدزنگ و مکانیزم سرامیکی دقیق. مناسب برای آسیاب یکنواخت دانه‌های قهوه تخصصی در خانه.</p>
-                    <ul class="meta-list">
-                        <li><i class="fas fa-check"></i> بدنه استیل ضدزنگ</li>
-                        <li><i class="fas fa-check"></i> تیغه سرامیکی</li>
-                        <li><i class="fas fa-check"></i> تنظیم درجه آسیاب</li>
-                        <li><i class="fas fa-check"></i> مناسب خانه و سفر</li>
-                    </ul>
-                    <div class="product-actions">
-                        <button class="btn btn-primary add-to-cart" data-id="1" data-name="آسیاب قهوه دستی">
-                            <i class="fas fa-shopping-bag"></i> افزودن به سبد
-                        </button>
-                        <button class="btn btn-outline wishlist-btn" data-id="1" style="opacity:1">
-                            <i class="far fa-heart"></i> علاقه‌مندی
-                        </button>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="pd-info">
+        <span class="pd-cat">تجهیزات قهوه</span>
+        <h1>آسیاب قهوه دستی</h1>
+        <p class="pd-short">آسیاب دستی حرفه‌ای با تیغه سرامیکی و بدنه استیل</p>
+        <div class="pd-rating">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <span>۴.۶ از ۵</span><span class="sep">|</span><span>۲۳ نظر</span>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border:none;justify-content:center">
-                <p>© ۱۴۰۳ قهوه پلاتو</p>
-            </div>
+        <div class="pd-price-row">
+          <span class="pd-price">۱,۲۵۰,۰۰۰ <small>تومان</small></span>
+          <span class="pd-old">۱,۵۶۰,۰۰۰ تومان</span>
+          <span class="pd-off">۲۰٪ تخفیف</span>
         </div>
-    </footer>
-    <script src="js/main.js"></script>
+        <div class="pd-trust">
+          <div><i class="fas fa-truck"></i> ارسال سریع</div>
+          <div><i class="fas fa-shield-alt"></i> ضمانت اصالت</div>
+          <div><i class="fas fa-undo"></i> ۷ روز بازگشت</div>
+        </div>
+        <div class="pd-qty">
+          <span>تعداد:</span>
+          <div class="qty-box">
+            <button type="button" onclick="var i=document.getElementById('qty');i.value=Math.max(1,+i.value-1)">−</button>
+            <input type="number" id="qty" value="1" min="1" max="20" readonly>
+            <button type="button" onclick="var i=document.getElementById('qty');i.value=Math.min(20,+i.value+1)">+</button>
+          </div>
+        </div>
+        <div class="pd-actions">
+          <button class="btn btn-primary add-to-cart" data-id="1" data-name="آسیاب قهوه دستی"><i class="fas fa-shopping-bag"></i> افزودن به سبد خرید</button>
+          <button class="btn btn-outline wishlist-btn" data-id="1" style="opacity:1"><i class="far fa-heart"></i></button>
+        </div>
+        <ul class="pd-features-mini">
+          <li><i class="fas fa-check-circle"></i> تنظیم دقیق درجه آسیاب</li>
+          <li><i class="fas fa-check-circle"></i> تیغه سرامیکی بدون طعم فلزی</li>
+          <li><i class="fas fa-check-circle"></i> بدنه مقاوم و سبک</li>
+          <li><i class="fas fa-check-circle"></i> مناسب اسپرسو تا فرنچ پرس</li>
+          <li><i class="fas fa-check-circle"></i> شستشوی آسان</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pd-tabs">
+      <div class="pd-tab-btns">
+        <button class="active" data-tab="desc">توضیحات</button>
+        <button data-tab="specs">مشخصات فنی</button>
+        <button data-tab="reviews">نظرات</button>
+      </div>
+      <div class="pd-tab-panel active" id="tab-desc">
+        <p>آسیاب دستی قهوه پلاتو با بدنه استیل ضدزنگ و مکانیزم آسیاب سرامیکی دقیق طراحی شده است. درجه آسیاب از بسیار ریز (اسپرسو) تا درشت (فرنچ پرس) قابل تنظیم است. دسته‌ی ارگونومیک و بلبرینگ داخلی، آسیاب کردن را روان و بدون خستگی می‌کند. مناسب خانه، دفتر و سفر.</p>
+      </div>
+      <div class="pd-tab-panel" id="tab-specs">
+        <table class="pd-table"><tbody>
+          <tr><td>جنس بدنه</td><td>استیل ضدزنگ</td></tr>
+          <tr><td>تیغه</td><td>سرامیکی مخروطی</td></tr>
+          <tr><td>وزن</td><td>۴۲۰ گرم</td></tr>
+          <tr><td>ظرفیت</td><td>۲۵ گرم دانه</td></tr>
+          <tr><td>گارانتی</td><td>۱۲ ماه</td></tr>
+        </tbody></table>
+      </div>
+      <div class="pd-tab-panel" id="tab-reviews">
+        <div class="pd-review">
+          <div class="pd-review-top"><strong>سارا م.</strong> <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+          <p>کیفیت عالی و ارسال سریع. کاملاً راضی‌ام و دوباره هم سفارش می‌دم.</p>
+        </div>
+        <div class="pd-review">
+          <div class="pd-review-top"><strong>امیر ر.</strong> <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></div>
+          <p>نسبت به قیمت ارزش خرید بالایی داشت. پیشنهاد می‌کنم.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="related-products">
+  <div class="container">
+    <div class="section-header">
+      <h2>محصولات مرتبط</h2>
+      <a href="shop.html" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="products-grid" style="grid-template-columns:repeat(4,1fr)">
+      <a href="product-2.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85" alt=""></div><div class="product-info"><h3>پیچر استیل ۶۰۰ میلی</h3><p class="product-cat">تجهیزات باریستا</p><div class="product-price"><span class="current-price">۴۸۰,۰۰۰ تومان</span></div></div></a>
+      <a href="product-3.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=900&q=85" alt=""></div><div class="product-info"><h3>اسپرسوساز دلونگی</h3><p class="product-cat">ماشین‌های قهوه</p><div class="product-price"><span class="current-price">۱۲,۹۰۰,۰۰۰ تومان</span></div></div></a>
+      <a href="product-4.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=900&q=85" alt=""></div><div class="product-info"><h3>دانه قهوه اتیوپی</h3><p class="product-cat">دانه‌های تخصصی</p><div class="product-price"><span class="current-price">۳۸۵,۰۰۰ تومان</span></div></div></a>
+      <a href="product-5.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=900&q=85" alt=""></div><div class="product-info"><h3>موکاپات بیالتی</h3><p class="product-cat">تجهیزات کلاسیک</p><div class="product-price"><span class="current-price">۹۸۰,۰۰۰ تومان</span></div></div></a>
+    </div>
+  </div>
+</section>
+<footer class="footer"><div class="container"><div class="footer-bottom" style="border:none;justify-content:center"><p>© ۱۴۰۳ قهوه پلاتو</p></div></div></footer>
+<script src="js/main.js"></script>
+<script>
+document.querySelectorAll('.pd-tab-btns button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pd-tab-btns button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.pd-tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+document.querySelectorAll('.pd-thumb').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.pd-thumb').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
