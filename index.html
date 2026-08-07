@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قهوه پلاتو | صفحه اصلی</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,8 +13,8 @@
         <div class="search-box">
             <div class="search-input-wrap">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="جستجوی محصول، دانه قهوه، تجهیزات..." autocomplete="off">
-                <button class="search-close" aria-label="بستن"><i class="fas fa-times"></i></button>
+                <input type="text" id="searchInput" placeholder="جستجوی محصول..." autocomplete="off">
+                <button class="search-close"><i class="fas fa-times"></i></button>
             </div>
             <div class="search-results" id="searchResults"></div>
         </div>
@@ -41,8 +39,7 @@
                 <div class="header-actions">
                     <button class="icon-btn" data-search-open aria-label="جستجو"><i class="fas fa-search"></i></button>
                     <span data-user-area><a href="login.html" class="icon-btn" aria-label="حساب کاربری"><i class="far fa-user"></i></a></span>
-                    <button class="icon-btn" aria-label="علاقه‌مندی‌ها"><i class="far fa-heart"></i><span class="wish-count" style="display:none">0</span></button>
-                    <button class="icon-btn cart-btn" aria-label="سبد خرید"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+                    <a href="cart.html" class="icon-btn cart-btn" aria-label="سبد خرید"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
                 </div>
                 <button class="mobile-menu-btn" aria-label="منو"><i class="fas fa-bars"></i></button>
             </div>
@@ -129,10 +126,10 @@
         <div class="container">
             <div class="section-header"><h2>آموزش‌ها و مقالات</h2><a href="blog.html" class="view-all">مشاهده مقالات <i class="fas fa-arrow-left"></i></a></div>
             <div class="articles-grid">
-                <a href="education.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">آموزش</span><h3>آموزش لاته آرت برای مبتدیان</h3><p>یادگیری تکنیک‌های پایه لاته آرت به صورت گام به گام</p><div class="article-meta"><span><i class="far fa-clock"></i> ۵ دقیقه</span></div></div></a>
-                <a href="education.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">راهنما</span><h3>روش دم آوری V60 قدم به قدم</h3><p>راهنمای کامل دم کردن قهوه با V60 برای طعمی بی‌نظیر</p><div class="article-meta"><span><i class="far fa-clock"></i> ۸ دقیقه</span></div></div></a>
-                <a href="blog.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">دانش قهوه</span><h3>راهنمای تشخیص قهوه تازه و باکیفیت</h3><p>چگونه قهوه تازه و باکیفیت را از روی ظاهر و عطر تشخیص دهیم</p><div class="article-meta"><span><i class="far fa-clock"></i> ۶ دقیقه</span></div></div></a>
-                <a href="education.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">تکنیک</span><h3>استخراج اسپرسو عالی در خانه</h3><p>نکات کلیدی برای گرفتن شات اسپرسوی حرفه‌ای در خانه</p><div class="article-meta"><span><i class="far fa-clock"></i> ۷ دقیقه</span></div></div></a>
+                <a href="education.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">آموزش</span><h3>آموزش لاته آرت برای مبتدیان</h3><p>یادگیری تکنیک‌های پایه لاته آرت</p><div class="article-meta"><span><i class="far fa-clock"></i> ۵ دقیقه</span></div></div></a>
+                <a href="education.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">راهنما</span><h3>روش دم آوری V60</h3><p>راهنمای کامل دم کردن قهوه با V60</p><div class="article-meta"><span><i class="far fa-clock"></i> ۸ دقیقه</span></div></div></a>
+                <a href="blog.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">دانش قهوه</span><h3>تشخیص قهوه تازه</h3><p>چگونه قهوه باکیفیت را تشخیص دهیم</p><div class="article-meta"><span><i class="far fa-clock"></i> ۶ دقیقه</span></div></div></a>
+                <a href="education.html" class="article-card"><div class="article-image"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt=""></div><div class="article-content"><span class="article-tag">تکنیک</span><h3>استخراج اسپرسو عالی</h3><p>نکات کلیدی برای شات اسپرسوی حرفه‌ای</p><div class="article-meta"><span><i class="far fa-clock"></i> ۷ دقیقه</span></div></div></a>
             </div>
         </div>
     </section>
@@ -142,7 +139,7 @@
             <div class="why-content">
                 <div class="why-text">
                     <h2>چرا قهوه پلاتو؟</h2>
-                    <p>ما در قهوه پلاتو تلاش می‌کنیم تا بهترین دانه‌های قهوه را از سراسر جهان انتخاب کرده و با عشق برشته کنیم تا تجربه‌ای فراموش‌نشدنی برای شما به ارمغان بیاوریم.</p>
+                    <p>ما بهترین دانه‌های قهوه را از سراسر جهان انتخاب کرده و با عشق برشته می‌کنیم.</p>
                     <div class="stats">
                         <div class="stat-item"><span class="stat-number">+۱۵</span><span class="stat-label">سال تجربه</span></div>
                         <div class="stat-item"><span class="stat-number">+۵۰</span><span class="stat-label">محصول متنوع</span></div>
@@ -158,7 +155,7 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <div class="newsletter-text"><h2>در خبرنامه ما عضو شوید</h2><p>از جدیدترین محصولات، تخفیف‌ها و مقالات آموزشی باخبر شوید</p></div>
+                <div class="newsletter-text"><h2>در خبرنامه ما عضو شوید</h2><p>از جدیدترین محصولات و تخفیف‌ها باخبر شوید</p></div>
                 <form class="newsletter-form"><input type="email" placeholder="ایمیل خود را وارد کنید" required><button type="submit" class="btn btn-dark">عضویت</button></form>
             </div>
         </div>
@@ -169,30 +166,28 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo"><span class="logo-icon">☕</span><span>قهوه پلاتو</span></div>
-                    <p>تجربه طعم واقعی قهوه با دانه‌های تازه و رست تخصصی</p>
+                    <p>تجربه طعم واقعی قهوه با دانه‌های تازه</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-col"><h4>دسترسی سریع</h4><ul>
                     <li><a href="index.html">خانه</a></li><li><a href="shop.html">فروشگاه</a></li>
-                    <li><a href="about.html">درباره ما</a></li><li><a href="education.html">آموزش</a></li><li><a href="blog.html">وبلاگ</a></li>
+                    <li><a href="cart.html">سبد خرید</a></li><li><a href="about.html">درباره ما</a></li>
                 </ul></div>
                 <div class="footer-col"><h4>دسته بندی‌ها</h4><ul>
                     <li><a href="shop.html">دانه قهوه</a></li><li><a href="shop.html">قهوه سازها</a></li>
-                    <li><a href="shop.html">آسیاب قهوه</a></li><li><a href="shop.html">لوازم جانبی</a></li><li><a href="shop.html">پک هدیه</a></li>
+                    <li><a href="shop.html">آسیاب قهوه</a></li><li><a href="shop.html">لوازم جانبی</a></li>
                 </ul></div>
-                <div class="footer-col"><h4>اطلاعات تماس</h4><ul class="contact-info">
+                <div class="footer-col"><h4>تماس</h4><ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> تهران، خیابان ولیعصر</li>
                     <li><i class="fas fa-phone"></i> ۰۲۱-۸۸۷۷۶۶۵۵</li>
                     <li><i class="fas fa-envelope"></i> info@platocoffee.ir</li>
-                    <li><i class="fas fa-clock"></i> همه روزه ۹ صبح تا ۹ شب</li>
                 </ul></div>
             </div>
             <div class="footer-bottom">
                 <p>© ۱۴۰۳ قهوه پلاتو. تمامی حقوق محفوظ است.</p>
-                <p>طراحی و توسعه با ❤️ برای عاشقان قهوه</p>
             </div>
         </div>
     </footer>
