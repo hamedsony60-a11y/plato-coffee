@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/product.css">
 </head>
 <body>
 <div class="search-overlay" id="searchOverlay"><div class="search-box"><div class="search-input-wrap"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="جستجو..." autocomplete="off"><button class="search-close"><i class="fas fa-times"></i></button></div><div class="search-results" id="searchResults"></div></div></div>
@@ -13,19 +14,36 @@
 <div class="logo"><a href="index.html"><span class="logo-icon">☕</span><span class="logo-text">قهوه پلاتو</span></a></div>
 <nav class="nav"><ul><li><a href="index.html">خانه</a></li><li><a href="shop.html" class="active">فروشگاه</a></li><li><a href="about.html">درباره ما</a></li><li><a href="education.html">آموزش</a></li><li><a href="blog.html">وبلاگ</a></li><li><a href="contact.html">تماس با ما</a></li></ul></nav>
 <div class="header-actions"><button class="icon-btn" data-search-open><i class="fas fa-search"></i></button><span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span><button class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button></div>
-<button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-</div></div></header>
-<section class="page-banner"><div class="container"><h1>دانه قهوه ۲۵۰ گرمی اتیوپی</h1><div class="breadcrumb"><a href="index.html">خانه</a> / <a href="shop.html">فروشگاه</a> / <span>دانه قهوه اتیوپی</span></div></div></section>
-<section class="product-detail"><div class="container"><div class="product-detail-grid">
-<div class="product-detail-image"><img src="https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=800&q=85" alt="دانه قهوه"></div>
-<div class="product-detail-info">
-<h1>دانه قهوه ۲۵۰ گرمی اتیوپی</h1><p class="cat">دانه‌های تخصصی</p>
-<div class="price-box"><span class="price-current">۳۸۵,۰۰۰ تومان</span><span class="price-old">۵۱۰,۰۰۰ تومان</span><span class="badge-off">۲۵٪ تخفیف</span></div>
-<p class="desc">دانه قهوه تخصصی اتیوپی با نت‌های گلی، مرکبات و کمی شکلات. رست مدیوم، مناسب برای V60 و اسپرسو.</p>
-<ul class="meta-list"><li><i class="fas fa-check"></i> خاستگاه: اتیوپی</li><li><i class="fas fa-check"></i> رست مدیوم</li><li><i class="fas fa-check"></i> وزن: ۲۵۰ گرم</li></ul>
-<div class="product-actions"><button class="btn btn-primary add-to-cart" data-id="4" data-name="دانه قهوه اتیوپی"><i class="fas fa-shopping-bag"></i> افزودن به سبد</button>
-<button class="btn btn-outline wishlist-btn" data-id="4" style="opacity:1"><i class="far fa-heart"></i> علاقه‌مندی</button></div>
-</div></div></div></section>
+<button class="mobile-menu-btn"><i class="fas fa-bars"></i></button></div></div></header>
+<div class="pd-breadcrumb"><div class="container"><a href="index.html">خانه</a><i class="fas fa-chevron-left"></i><a href="shop.html">فروشگاه</a><i class="fas fa-chevron-left"></i><span>دانه قهوه اتیوپی</span></div></div>
+<section class="pd-main"><div class="container"><div class="pd-grid">
+<div class="pd-gallery"><div class="pd-main-img"><img src="https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=900&q=85" alt="دانه قهوه" id="mainImg"><span class="pd-badge-img">۲۵٪ تخفیف</span></div>
+<div class="pd-thumbs"><button class="pd-thumb active" onclick="document.getElementById('mainImg').src='https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=900&q=85'"><img src="https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=400&q=80" alt=""></button>
+<button class="pd-thumb" onclick="document.getElementById('mainImg').src='https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80'"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" alt=""></button>
+<button class="pd-thumb" onclick="document.getElementById('mainImg').src='https://images.unsplash.com/photo-1498804103079-a6351b050096?w=400&q=80'"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=400&q=80" alt=""></button></div></div>
+<div class="pd-info"><span class="pd-cat">دانه‌های تخصصی</span><h1>دانه قهوه ۲۵۰ گرمی اتیوپی</h1>
+<p class="pd-short">دانه تخصصی اتیوپی با نت‌های گلی و مرکبات</p>
+<div class="pd-rating"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><span>۴.۶ از ۵</span><span class="sep">|</span><span>۲۳ نظر</span></div>
+<div class="pd-price-row"><span class="pd-price">۳۸۵,۰۰۰ <small>تومان</small></span><span class="pd-old">۵۱۰,۰۰۰ تومان</span><span class="pd-off">۲۵٪ تخفیف</span></div>
+<div class="pd-trust"><div><i class="fas fa-truck"></i> ارسال سریع</div><div><i class="fas fa-shield-alt"></i> ضمانت اصالت</div><div><i class="fas fa-undo"></i> ۷ روز بازگشت</div></div>
+<div class="pd-qty"><span>تعداد:</span><div class="qty-box"><button type="button" onclick="var i=document.getElementById('qty');i.value=Math.max(1,+i.value-1)">−</button><input type="number" id="qty" value="1" min="1" max="20" readonly><button type="button" onclick="var i=document.getElementById('qty');i.value=Math.min(20,+i.value+1)">+</button></div></div>
+<div class="pd-actions"><button class="btn btn-primary add-to-cart" data-id="4" data-name="دانه قهوه اتیوپی"><i class="fas fa-shopping-bag"></i> افزودن به سبد خرید</button>
+<button class="btn btn-outline wishlist-btn" data-id="4" style="opacity:1"><i class="far fa-heart"></i></button></div>
+<ul class="pd-features-mini"><li><i class="fas fa-check-circle"></i> تک‌خاستگاه تخصصی</li><li><i class="fas fa-check-circle"></i> رست تازه</li><li><i class="fas fa-check-circle"></i> مناسب فیلتر و اسپرسو</li><li><i class="fas fa-check-circle"></i> بسته‌بندی با سوپاپ</li></ul>
+</div></div>
+<div class="pd-tabs"><div class="pd-tab-btns"><button class="active" data-tab="desc">توضیحات</button><button data-tab="specs">مشخصات فنی</button><button data-tab="reviews">نظرات</button></div>
+<div class="pd-tab-panel active" id="tab-desc"><p>دانه تک‌خاستگاه اتیوپی با نت‌های گل یاس، لیمو و شکلات. رست مدیوم تازه توسط تیم پلاتو.</p></div>
+<div class="pd-tab-panel" id="tab-specs"><table class="pd-table"><tbody><tr><td>خاستگاه</td><td>اتیوپی</td></tr><tr><td>رست</td><td>مدیوم</td></tr><tr><td>وزن</td><td>۲۵۰ گرم</td></tr><tr><td>فرآوری</td><td>طبیعی</td></tr></tbody></table></div>
+<div class="pd-tab-panel" id="tab-reviews"><div class="pd-review"><div class="pd-review-top"><strong>سارا م.</strong> <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div><p>عطر و طعم فوق‌العاده.</p></div></div></div>
+</div></section>
+<section class="related-products"><div class="container"><div class="section-header"><h2>محصولات مرتبط</h2><a href="shop.html" class="view-all">مشاهده همه</a></div>
+<div class="products-grid" style="grid-template-columns:repeat(4,1fr)">
+<a href="product-1.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&q=80" alt=""></div><div class="product-info"><h3>آسیاب دستی</h3><div class="product-price"><span class="current-price">۱,۲۵۰,۰۰۰ تومان</span></div></div></a>
+<a href="product-6.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" alt=""></div><div class="product-info"><h3>دانه کلمبیا</h3><div class="product-price"><span class="current-price">۴۲۰,۰۰۰ تومان</span></div></div></a>
+<a href="product-5.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80" alt=""></div><div class="product-info"><h3>موکاپات</h3><div class="product-price"><span class="current-price">۹۸۰,۰۰۰ تومان</span></div></div></a>
+<a href="product-7.html" class="product-card"><div class="product-image"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80" alt=""></div><div class="product-info"><h3>فرنچ پرس</h3><div class="product-price"><span class="current-price">۶۵۰,۰۰۰ تومان</span></div></div></a>
+</div></div></section>
 <footer class="footer"><div class="container"><div class="footer-bottom" style="border:none;justify-content:center"><p>© ۱۴۰۳ قهوه پلاتو</p></div></div></footer>
 <script src="js/main.js"></script>
+<script>document.querySelectorAll('.pd-tab-btns button').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.pd-tab-btns button').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.pd-tab-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab).classList.add('active');});});document.querySelectorAll('.pd-thumb').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.pd-thumb').forEach(x=>x.classList.remove('active'));t.classList.add('active');});});</script>
 </body></html>
