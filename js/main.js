@@ -10,7 +10,7 @@ const PRODUCTS = [
     { id: 8, name: 'فیلتر کاغذی V60', cat: 'لوازم جانبی', price: '۹۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?w=100&q=80' }
 ];
 
-// ===== Cart & Wishlist (localStorage) =====
+// ===== Cart & Wishlist =====
 let cart = JSON.parse(localStorage.getItem('plato_cart') || '[]');
 let wishlist = JSON.parse(localStorage.getItem('plato_wishlist') || '[]');
 
@@ -37,6 +37,32 @@ function showToast(msg) {
     setTimeout(() => t.classList.remove('show'), 2200);
 }
 
+// ===== Auth (localStorage) =====
+function getUser() {
+    try { return JSON.parse(localStorage.getItem('plato_user') || 'null'); }
+    catch { return null; }
+}
+function setUser(user) {
+    if (user) localStorage.setItem('plato_user', JSON.stringify(user));
+    else localStorage.removeItem('plato_user');
+}
+function isLoggedIn() { return !!getUser(); }
+
+function updateUserUI() {
+    const user = getUser();
+    document.querySelectorAll('[data-user-area]').forEach(el => {
+        if (user) {
+            el.innerHTML = `
+                <a href="account.html" class="icon-btn" title="${user.name}" style="gap:4px;width:auto;padding:0 8px">
+                    <i class="fas fa-user"></i>
+                    <span class="header-user-name">${user.name.split(' ')[0]}</span>
+                </a>`;
+        } else {
+            el.innerHTML = `<a href="login.html" class="icon-btn" aria-label="حساب کاربری"><i class="far fa-user"></i></a>`;
+        }
+    });
+}
+
 // ===== Search Overlay =====
 function initSearch() {
     const overlay = document.getElementById('searchOverlay');
@@ -44,20 +70,18 @@ function initSearch() {
     const results = document.getElementById('searchResults');
     const openBtns = document.querySelectorAll('[data-search-open]');
     const closeBtn = document.querySelector('.search-close');
-
     if (!overlay) return;
 
     openBtns.forEach(btn => btn.addEventListener('click', () => {
         overlay.classList.add('active');
-        setTimeout(() => input.focus(), 100);
+        setTimeout(() => input && input.focus(), 100);
     }));
 
     function closeSearch() {
         overlay.classList.remove('active');
-        input.value = '';
-        results.innerHTML = '';
+        if (input) input.value = '';
+        if (results) results.innerHTML = '';
     }
-
     closeBtn?.addEventListener('click', closeSearch);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeSearch(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
@@ -65,25 +89,16 @@ function initSearch() {
     input?.addEventListener('input', () => {
         const q = input.value.trim().toLowerCase();
         if (!q) { results.innerHTML = ''; return; }
-
-        const matched = PRODUCTS.filter(p =>
-            p.name.includes(q) || p.cat.includes(q) || p.name.toLowerCase().includes(q)
-        );
-
+        const matched = PRODUCTS.filter(p => p.name.includes(q) || p.cat.includes(q));
         if (!matched.length) {
             results.innerHTML = '<div class="search-empty">نتیجه‌ای یافت نشد ☕</div>';
             return;
         }
-
         results.innerHTML = matched.map(p => `
             <div class="search-result-item" onclick="location.href='shop.html'">
                 <img src="${p.img}" alt="${p.name}">
-                <div class="info">
-                    <h4>${p.name}</h4>
-                    <span>${p.cat} · ${p.price}</span>
-                </div>
-            </div>
-        `).join('');
+                <div class="info"><h4>${p.name}</h4><span>${p.cat} · ${p.price}</span></div>
+            </div>`).join('');
     });
 }
 
@@ -92,7 +107,6 @@ function initMobileMenu() {
     const btn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
     if (!btn || !nav) return;
-
     btn.addEventListener('click', () => {
         nav.classList.toggle('open');
         const icon = btn.querySelector('i');
@@ -101,28 +115,26 @@ function initMobileMenu() {
     });
 }
 
-// ===== Wishlist buttons =====
+// ===== Wishlist =====
 function initWishlist() {
     document.querySelectorAll('.wishlist-btn').forEach(btn => {
         const id = btn.dataset.id;
         if (wishlist.includes(id)) {
             btn.classList.add('active');
-            btn.querySelector('i').classList.replace('far', 'fas');
+            btn.querySelector('i')?.classList.replace('far', 'fas');
         }
-
         btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
+            e.preventDefault(); e.stopPropagation();
             const icon = btn.querySelector('i');
             if (wishlist.includes(id)) {
                 wishlist = wishlist.filter(x => x !== id);
                 btn.classList.remove('active');
-                icon.classList.replace('fas', 'far');
+                icon?.classList.replace('fas', 'far');
                 showToast('از علاقه‌مندی‌ها حذف شد');
             } else {
                 wishlist.push(id);
                 btn.classList.add('active');
-                icon.classList.replace('far', 'fas');
+                icon?.classList.replace('far', 'fas');
                 showToast('به علاقه‌مندی‌ها اضافه شد ❤️');
             }
             saveWishlist();
@@ -134,8 +146,7 @@ function initWishlist() {
 function initAddToCart() {
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
+            e.preventDefault(); e.stopPropagation();
             const id = btn.dataset.id;
             const name = btn.dataset.name || 'محصول';
             cart.push({ id, name, time: Date.now() });
@@ -170,13 +181,93 @@ function initContactForm() {
     });
 }
 
+// ===== Login / Register =====
+function initAuthForms() {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            const pass = document.getElementById('loginPass').value;
+            const err = document.getElementById('loginError');
+            const users = JSON.parse(localStorage.getItem('plato_users') || '[]');
+            const found = users.find(u => u.email === email && u.pass === pass);
+            if (found) {
+                setUser({ name: found.name, email: found.email });
+                showToast('ورود موفق! خوش آمدید ☕');
+                setTimeout(() => location.href = 'account.html', 800);
+            } else {
+                if (err) { err.textContent = 'ایمیل یا رمز عبور اشتباه است'; err.classList.add('show'); }
+            }
+        });
+    }
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const pass = document.getElementById('regPass').value;
+            const pass2 = document.getElementById('regPass2').value;
+            const err = document.getElementById('regError');
+            if (pass !== pass2) {
+                if (err) { err.textContent = 'رمز عبور و تکرار آن یکسان نیستند'; err.classList.add('show'); }
+                return;
+            }
+            if (pass.length < 4) {
+                if (err) { err.textContent = 'رمز عبور حداقل ۴ کاراکتر باشد'; err.classList.add('show'); }
+                return;
+            }
+            let users = JSON.parse(localStorage.getItem('plato_users') || '[]');
+            if (users.find(u => u.email === email)) {
+                if (err) { err.textContent = 'این ایمیل قبلاً ثبت شده است'; err.classList.add('show'); }
+                return;
+            }
+            users.push({ name, email, pass });
+            localStorage.setItem('plato_users', JSON.stringify(users));
+            setUser({ name, email });
+            showToast('ثبت‌نام موفق! خوش آمدید ☕');
+            setTimeout(() => location.href = 'account.html', 800);
+        });
+    }
+
+    document.querySelectorAll('[data-logout]').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            setUser(null);
+            showToast('با موفقیت خارج شدید');
+            setTimeout(() => location.href = 'index.html', 700);
+        });
+    });
+}
+
+// ===== Account page protect =====
+function protectAccountPage() {
+    if (location.pathname.includes('account.html') || document.body.dataset.page === 'account') {
+        if (!isLoggedIn()) {
+            location.href = 'login.html';
+        } else {
+            const user = getUser();
+            document.querySelectorAll('[data-user-name]').forEach(el => el.textContent = user.name);
+            document.querySelectorAll('[data-user-email]').forEach(el => el.textContent = user.email);
+            document.querySelectorAll('[data-cart-count]').forEach(el => el.textContent = cart.length);
+            document.querySelectorAll('[data-wish-count]').forEach(el => el.textContent = wishlist.length);
+        }
+    }
+}
+
 // ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
     updateBadges();
+    updateUserUI();
     initSearch();
     initMobileMenu();
     initWishlist();
     initAddToCart();
     initNewsletter();
     initContactForm();
+    initAuthForms();
+    protectAccountPage();
 });
