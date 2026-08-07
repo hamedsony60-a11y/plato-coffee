@@ -9,7 +9,6 @@ if (mobileBtn) {
         if (nav.classList.contains('open')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
-            // Simple mobile nav style injection
             nav.style.display = 'block';
             nav.style.position = 'absolute';
             nav.style.top = '70px';
@@ -78,12 +77,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Simple cart counter demo
-let cartCount = 0;
+// Cart functionality with localStorage - ready to use
+let cart = JSON.parse(localStorage.getItem('platoCart') || '[]');
 const cartCountEl = document.querySelector('.cart-count');
+
+function updateCartCount() {
+    const total = cart.reduce((sum, item) => sum + item.qty, 0);
+    if (cartCountEl) cartCountEl.textContent = total;
+}
+
+updateCartCount();
+
+// Click on product card to add to cart
 document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('dblclick', () => {
-        cartCount++;
-        if (cartCountEl) cartCountEl.textContent = cartCount;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('.wishlist-btn')) return;
+        const name = card.querySelector('h3')?.textContent?.trim() || 'محصول';
+        const price = card.querySelector('.current-price')?.textContent?.trim() || '';
+        const existing = cart.find(i => i.name === name);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ name, price, qty: 1 });
+        }
+        localStorage.setItem('platoCart', JSON.stringify(cart));
+        updateCartCount();
+        // Toast feedback
+        const toast = document.createElement('div');
+        toast.textContent = '✓ به سبد خرید اضافه شد';
+        toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#3d2b1f;color:#fff;padding:14px 28px;border-radius:50px;font-family:Vazirmatn,sans-serif;z-index:9999;font-size:14px;font-weight:500;box-shadow:0 8px 30px rgba(0,0,0,0.25);';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.3s';
+            setTimeout(() => toast.remove(), 300);
+        }, 1800);
     });
+});
+
+// Cart button shows summary
+document.querySelector('.cart-btn')?.addEventListener('click', () => {
+    if (cart.length === 0) {
+        alert('سبد خرید شما خالی است');
+        return;
+    }
+    let msg = '🛒 سبد خرید شما:\n\n';
+    let totalItems = 0;
+    cart.forEach(item => {
+        msg += `• ${item.name}\n  تعداد: ${item.qty} | ${item.price}\n\n`;
+        totalItems += item.qty;
+    });
+    msg += `────────────────\nجمع اقلام: ${totalItems} عدد\n\n(برای خالی کردن سبد خرید: localStorage.removeItem("platoCart"))`;
+    alert(msg);
 });
