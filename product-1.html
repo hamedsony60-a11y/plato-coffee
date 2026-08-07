@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آسیاب قهوه دستی | قهوه پلاتو</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-wrap">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="جستجوی محصول..." autocomplete="off">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo"><a href="index.html"><span class="logo-icon">☕</span><span class="logo-text">قهوه پلاتو</span></a></div>
+                <nav class="nav"><ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="shop.html" class="active">فروشگاه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="education.html">آموزش</a></li>
+                    <li><a href="blog.html">وبلاگ</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                </ul></nav>
+                <div class="header-actions">
+                    <button class="icon-btn" data-search-open><i class="fas fa-search"></i></button>
+                    <span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span>
+                    <button class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+                </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>آسیاب قهوه دستی</h1>
+            <div class="breadcrumb">
+                <a href="index.html">خانه</a> / <a href="shop.html">فروشگاه</a> / <span>آسیاب قهوه دستی</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <div class="product-detail-image">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=85" alt="آسیاب قهوه دستی">
+                </div>
+                <div class="product-detail-info">
+                    <h1>آسیاب قهوه دستی</h1>
+                    <p class="cat">تجهیزات قهوه</p>
+                    <div class="price-box">
+                        <span class="price-current">۱,۲۵۰,۰۰۰ تومان</span>
+                        <span class="price-old">۱,۵۶۰,۰۰۰ تومان</span>
+                        <span class="badge-off">۲۰٪ تخفیف</span>
+                    </div>
+                    <p class="desc">آسیاب دستی قهوه با بدنه استیل ضدزنگ و مکانیزم سرامیکی دقیق. مناسب برای آسیاب یکنواخت دانه‌های قهوه تخصصی در خانه. دسته‌ی ارگونومیک و تنظیم درجه آسیاب از ریز تا درشت.</p>
+                    <ul class="meta-list">
+                        <li><i class="fas fa-check"></i> بدنه استیل ضدزنگ</li>
+                        <li><i class="fas fa-check"></i> تیغه سرامیکی</li>
+                        <li><i class="fas fa-check"></i> تنظیم درجه آسیاب</li>
+                        <li><i class="fas fa-check"></i> مناسب خانه و سفر</li>
+                    </ul>
+                    <div class="product-actions">
+                        <button class="btn btn-primary add-to-cart" data-id="1" data-name="آسیاب قهوه دستی">
+                            <i class="fas fa-shopping-bag"></i> افزودن به سبد
+                        </button>
+                        <button class="btn btn-outline wishlist-btn" data-id="1" style="opacity:1">
+                            <i class="far fa-heart"></i> علاقه‌مندی
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>محصولات مرتبط</h2>
+                <a href="shop.html" class="view-all">مشاهده همه <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="products-grid" style="grid-template-columns:repeat(3,1fr)">
+                <a href="product-2.html" class="product-card">
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=85" alt="پیچر استیل"></div>
+                    <div class="product-info"><h3>پیچر استیل ۶۰۰ میلی</h3><p class="product-cat">تجهیزات باریستا</p><div class="product-price"><span class="current-price">۴۸۰,۰۰۰ تومان</span></div></div>
+                </a>
+                <a href="product-3.html" class="product-card">
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=800&q=85" alt="اسپرسوساز"></div>
+                    <div class="product-info"><h3>اسپرسوساز دلونگی</h3><p class="product-cat">ماشین‌های قهوه</p><div class="product-price"><span class="current-price">۱۲,۹۰۰,۰۰۰ تومان</span></div></div>
+                </a>
+                <a href="product-4.html" class="product-card">
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=800&q=85" alt="دانه قهوه"></div>
+                    <div class="product-info"><h3>دانه قهوه ۲۵۰ گرمی اتیوپی</h3><p class="product-cat">دانه‌های تخصصی</p><div class="product-price"><span class="current-price">۳۸۵,۰۰۰ تومان</span></div></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;justify-content:center">
+                <p>© ۱۴۰۳ قهوه پلاتو</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
