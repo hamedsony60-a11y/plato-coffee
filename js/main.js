@@ -10,7 +10,6 @@ const PRODUCTS = [
     { id: 8, name: 'فیلتر کاغذی V60', cat: 'لوازم جانبی', price: '۹۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?w=100&q=80', url: 'product-8.html' }
 ];
 
-// ===== Cart & Wishlist =====
 let cart = JSON.parse(localStorage.getItem('plato_cart') || '[]');
 let wishlist = JSON.parse(localStorage.getItem('plato_wishlist') || '[]');
 
@@ -27,25 +26,14 @@ function updateBadges() {
 
 function showToast(msg) {
     let t = document.querySelector('.toast');
-    if (!t) {
-        t = document.createElement('div');
-        t.className = 'toast';
-        document.body.appendChild(t);
-    }
+    if (!t) { t = document.createElement('div'); t.className = 'toast'; document.body.appendChild(t); }
     t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// ===== Auth =====
-function getUser() {
-    try { return JSON.parse(localStorage.getItem('plato_user') || 'null'); }
-    catch { return null; }
-}
-function setUser(user) {
-    if (user) localStorage.setItem('plato_user', JSON.stringify(user));
-    else localStorage.removeItem('plato_user');
-}
+function getUser() { try { return JSON.parse(localStorage.getItem('plato_user') || 'null'); } catch { return null; } }
+function setUser(user) { if (user) localStorage.setItem('plato_user', JSON.stringify(user)); else localStorage.removeItem('plato_user'); }
 function isLoggedIn() { return !!getUser(); }
 
 function updateUserUI() {
@@ -59,7 +47,6 @@ function updateUserUI() {
     });
 }
 
-// ===== Search =====
 function initSearch() {
     const overlay = document.getElementById('searchOverlay');
     const input = document.getElementById('searchInput');
@@ -67,35 +54,19 @@ function initSearch() {
     const openBtns = document.querySelectorAll('[data-search-open]');
     const closeBtn = document.querySelector('.search-close');
     if (!overlay) return;
-
-    openBtns.forEach(btn => btn.addEventListener('click', () => {
-        overlay.classList.add('active');
-        setTimeout(() => input && input.focus(), 100);
-    }));
-
-    function closeSearch() {
-        overlay.classList.remove('active');
-        if (input) input.value = '';
-        if (results) results.innerHTML = '';
-    }
+    openBtns.forEach(btn => btn.addEventListener('click', () => { overlay.classList.add('active'); setTimeout(() => input && input.focus(), 100); }));
+    function closeSearch() { overlay.classList.remove('active'); if (input) input.value = ''; if (results) results.innerHTML = ''; }
     closeBtn?.addEventListener('click', closeSearch);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeSearch(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
-
     input?.addEventListener('input', () => {
         const q = input.value.trim().toLowerCase();
         if (!q) { results.innerHTML = ''; return; }
         const matched = PRODUCTS.filter(p => p.name.includes(q) || p.cat.includes(q));
-        if (!matched.length) {
-            results.innerHTML = '<div class="search-empty">نتیجه‌ای یافت نشد ☕</div>';
-            return;
-        }
+        if (!matched.length) { results.innerHTML = '<div class="search-empty">نتیجه‌ای یافت نشد ☕</div>'; return; }
         results.innerHTML = matched.map(p => {
             const url = p.url || 'shop.html';
-            return `<div class="search-result-item" onclick="location.href='${url}'">
-                <img src="${p.img}" alt="${p.name}">
-                <div class="info"><h4>${p.name}</h4><span>${p.cat} · ${p.price}</span></div>
-            </div>`;
+            return `<div class="search-result-item" onclick="location.href='${url}'"><img src="${p.img}" alt="${p.name}"><div class="info"><h4>${p.name}</h4><span>${p.cat} · ${p.price}</span></div></div>`;
         }).join('');
     });
 }
@@ -115,10 +86,7 @@ function initMobileMenu() {
 function initWishlist() {
     document.querySelectorAll('.wishlist-btn').forEach(btn => {
         const id = btn.dataset.id;
-        if (wishlist.includes(id)) {
-            btn.classList.add('active');
-            btn.querySelector('i')?.classList.replace('far', 'fas');
-        }
+        if (wishlist.includes(id)) { btn.classList.add('active'); btn.querySelector('i')?.classList.replace('far', 'fas'); }
         btn.addEventListener('click', e => {
             e.preventDefault(); e.stopPropagation();
             const icon = btn.querySelector('i');
@@ -156,10 +124,7 @@ function initNewsletter() {
         form.addEventListener('submit', e => {
             e.preventDefault();
             const input = form.querySelector('input');
-            if (input?.value) {
-                showToast('عضویت شما با موفقیت ثبت شد ☕');
-                input.value = '';
-            }
+            if (input?.value) { showToast('عضویت شما با موفقیت ثبت شد ☕'); input.value = ''; }
         });
     });
 }
@@ -167,11 +132,7 @@ function initNewsletter() {
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        showToast('پیام شما با موفقیت ارسال شد ✓');
-        form.reset();
-    });
+    form.addEventListener('submit', e => { e.preventDefault(); showToast('پیام شما با موفقیت ارسال شد ✓'); form.reset(); });
 }
 
 function initAuthForms() {
@@ -189,10 +150,7 @@ function initAuthForms() {
                 setUser({ name: found.name, email: found.email });
                 showToast('ورود موفق! خوش آمدید ☕');
                 setTimeout(() => location.href = 'account.html', 800);
-            } else if (err) {
-                err.textContent = 'ایمیل یا رمز عبور اشتباه است';
-                err.classList.add('show');
-            }
+            } else if (err) { err.textContent = 'ایمیل یا رمز عبور اشتباه است'; err.classList.add('show'); }
         });
     }
     if (registerForm) {
@@ -203,19 +161,10 @@ function initAuthForms() {
             const pass = document.getElementById('regPass').value;
             const pass2 = document.getElementById('regPass2').value;
             const err = document.getElementById('regError');
-            if (pass !== pass2) {
-                if (err) { err.textContent = 'رمز عبور و تکرار آن یکسان نیستند'; err.classList.add('show'); }
-                return;
-            }
-            if (pass.length < 4) {
-                if (err) { err.textContent = 'رمز عبور حداقل ۴ کاراکتر باشد'; err.classList.add('show'); }
-                return;
-            }
+            if (pass !== pass2) { if (err) { err.textContent = 'رمز عبور و تکرار آن یکسان نیستند'; err.classList.add('show'); } return; }
+            if (pass.length < 4) { if (err) { err.textContent = 'رمز عبور حداقل ۴ کاراکتر باشد'; err.classList.add('show'); } return; }
             let users = JSON.parse(localStorage.getItem('plato_users') || '[]');
-            if (users.find(u => u.email === email)) {
-                if (err) { err.textContent = 'این ایمیل قبلاً ثبت شده است'; err.classList.add('show'); }
-                return;
-            }
+            if (users.find(u => u.email === email)) { if (err) { err.textContent = 'این ایمیل قبلاً ثبت شده است'; err.classList.add('show'); } return; }
             users.push({ name, email, pass });
             localStorage.setItem('plato_users', JSON.stringify(users));
             setUser({ name, email });
@@ -235,9 +184,8 @@ function initAuthForms() {
 
 function protectAccountPage() {
     if (location.pathname.includes('account.html') || document.body.dataset.page === 'account') {
-        if (!isLoggedIn()) {
-            location.href = 'login.html';
-        } else {
+        if (!isLoggedIn()) location.href = 'login.html';
+        else {
             const user = getUser();
             document.querySelectorAll('[data-user-name]').forEach(el => el.textContent = user.name);
             document.querySelectorAll('[data-user-email]').forEach(el => el.textContent = user.email);
@@ -258,4 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initAuthForms();
     protectAccountPage();
+    document.querySelectorAll('.cart-btn').forEach(btn => {
+        if (btn.tagName === 'A') return;
+        btn.style.cursor = 'pointer';
+        btn.addEventListener('click', e => { e.preventDefault(); location.href = 'cart.html'; });
+    });
 });
