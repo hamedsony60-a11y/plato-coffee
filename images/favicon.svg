@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#f8f4ef"/>
-  <ellipse cx="32" cy="32" rx="22" ry="26" fill="#3d2314"/>
-  <path d="M32 10 Q20 32 32 54 Q44 32 32 10" fill="none" stroke="#f5e6d3" stroke-width="3.5" stroke-linecap="round"/>
-  <ellipse cx="32" cy="32" rx="7" ry="9" fill="#5c3a21"/>
-</svg>
+PLACEHOLDER_FAV

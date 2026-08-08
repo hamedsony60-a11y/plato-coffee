@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="280" height="70" viewBox="0 0 280 70">
-  <!-- Coffee bean -->
-  <ellipse cx="28" cy="35" rx="20" ry="24" fill="#3d2314"/>
-  <path d="M28 14 Q17 35 28 56 Q39 35 28 14" fill="none" stroke="#f5e6d3" stroke-width="3.2" stroke-linecap="round"/>
-  <ellipse cx="28" cy="35" rx="6" ry="8" fill="#5c3a21"/>
-  
-  <!-- Persian text: پلاتو قهوه -->
-  <text x="58" y="32" font-family="Tahoma, Arial, sans-serif" font-size="22" font-weight="700" fill="#3d2314" direction="rtl">پلاتو قهوه</text>
-  
-  <!-- English text -->
-  <text x="58" y="54" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600" fill="#5c3a21" letter-spacing="1.5">PLATO COFFEE</text>
-</svg>
+PLACEHOLDER_LOGO
