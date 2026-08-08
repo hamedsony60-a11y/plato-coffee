@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" width="280" height="72">
+  <g transform="translate(6,6)">
+    <ellipse cx="28" cy="30" rx="26" ry="30" fill="#3d2b1f"/>
+    <ellipse cx="22" cy="24" rx="10" ry="14" fill="#5c4033" opacity="0.55"/>
+    <path d="M28 6 C22 18, 22 42, 28 54 C34 42, 34 18, 28 6 Z" fill="none" stroke="#c17f4a" stroke-width="2.2"/>
+    <ellipse cx="18" cy="18" rx="5" ry="7" fill="#fff" opacity="0.12"/>
+  </g>
+  <text x="72" y="32" font-family="Tahoma, Arial, sans-serif" font-size="22" font-weight="700" fill="#3d2b1f">پلاتو قهوه</text>
+  <text x="72" y="54" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#8b6914" letter-spacing="2">PLATO COFFEE</text>
+</svg>
