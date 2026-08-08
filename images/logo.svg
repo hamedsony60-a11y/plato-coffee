@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="88" viewBox="0 0 320 141">
-  <image width="320" height="141" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAACdCAYAAADxJ0gVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGtGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4xLWMwMDAgNzkuZWRhMmIzZmFjLCAyMDIxLzExLzE3LTE3OjIzOjI1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjYtMDgtMDhUMTM6MzE6MDArMDIwMCIgeG1wOk1vZGlmeURhdGU9IjIwMjYtMDgtMDhUMTM6MzE6MDArMDIwMCIgeG1wOk1ldGFkYXRhRGF0YT0iMjAyNi0wOC0wOFQxMzozMTowMCswMjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpjYjU0ZjY0Yy1iZjY0LTQ5ZjYtYjY0Yy1iZjY0Y2JmNjRjYmYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Y2I1NGY2NGMtYmY2NC00OWY2LWI2NGMtYmY2NGNiZjY0Y2JmIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Y2I1NGY2NGMtYmY2NC00OWY2LWI2NGMtYmY2NGNiZjY0Y2JmIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxIHJkZjpwYXJzVHlwZT0iUmVzb3VyY2UiPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpjYjU0ZjY0Yy1iZjY0LTQ5ZjYtYjY0Yy1iZjY0Y2JmNjRjYmYiIHN0RXZ0OndoZW49IjIwMjYtMDgtMDhUMTM6MzE6MDArMDIwMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjEgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+vPPLAAAAAElFTkSuQmCC"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="90" viewBox="0 0 340 90">
+  <!-- Persian text -->
+  <text x="210" y="40" font-family="Tahoma, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#4a2c0a" text-anchor="end">قهوه پلاتو</text>
+  <!-- English -->
+  <text x="10" y="72" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#4a2c0a" letter-spacing="1.8">PILATO COFFEE</text>
+  <!-- Circular bean -->
+  <circle cx="280" cy="45" r="38" fill="#4a2c0a"/>
+  <!-- Cream curve matching the image style -->
+  <path d="M255 18 C270 28 270 40 255 50 C240 60 240 72 255 80 C275 70 295 55 295 40 C295 25 275 12 255 18Z" fill="#f5e6d3"/>
 </svg>
