@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="48" viewBox="0 0 220 48">
-  <!-- Coffee bean -->
-  <g transform="translate(4,4)">
-    <ellipse cx="18" cy="20" rx="16" ry="18" fill="#3d2314"/>
-    <path d="M18 4 Q10 20 18 36 Q26 20 18 4" fill="none" stroke="#f5e6d3" stroke-width="2.5"/>
-    <ellipse cx="18" cy="20" rx="5" ry="6" fill="#5c3a21"/>
-  </g>
-  <!-- Text -->
-  <text x="48" y="22" font-family="Vazirmatn, Tahoma, sans-serif" font-size="18" font-weight="700" fill="#3d2314">پلاتو قهوه</text>
-  <text x="48" y="40" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#8B6914" letter-spacing="1.5">PLATO COFFEE</text>
-</svg>
+PLACEHOLDER
