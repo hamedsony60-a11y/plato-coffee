@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سبد خرید | قهوه پلاتو</title>
+    <link rel="icon" href="favicon.ico?v=21" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=21">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=21">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=21">
+    <link rel="manifest" href="site.webmanifest?v=21">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="جستجو..." autocomplete="off">
+      <button class="search-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <div class="logo"><a href="index.html"><img src="images/logo-header.png" alt="پلاتو قهوه | PLATO COFFEE" class="logo-img"></a></div>
+      <nav class="nav"><ul>
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="shop.html">فروشگاه</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+        <li><a href="education.html">آموزش</a></li>
+        <li><a href="blog.html">وبلاگ</a></li>
+        <li><a href="contact.html">تماس با ما</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <button class="icon-btn" data-search-open><i class="fas fa-search"></i></button>
+        <span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span>
+        <a href="cart.html" class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      </div>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>سبد خرید</h1>
+    <p>بررسی و نهایی‌سازی سفارش</p>
+    <div class="breadcrumb"><a href="index.html">خانه</a> / <span>سبد خرید</span></div>
+  </div>
+</section>
+
+<!-- CART VIEW -->
+<section class="cart-page cart-section" id="cartSection">
+  <div class="container">
+    <div class="cart-layout">
+      <div class="cart-items">
+        <div class="cart-items-header">
+          <h2>محصولات سبد (<span id="cartItemCount">0</span>)</h2>
+          <button class="cart-clear" id="clearCartBtn">
+            <i class="fas fa-trash-alt"></i>
+            <span>خالی کردن سبد</span>
+          </button>
+        </div>
+        <div id="cartItemsList">
+          <div class="cart-empty">
+            <i class="fas fa-shopping-bag"></i>
+            <p>سبد خرید شما خالی است</p>
+            <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
+          </div>
+        </div>
+      </div>
+      <aside class="cart-summary">
+        <h2>خلاصه سفارش</h2>
+        <div class="summary-row"><span>جمع جزء</span><span id="subtotalText">۰ تومان</span></div>
+        <div class="summary-row"><span>هزینه ارسال</span><span id="shippingText">رایگان</span></div>
+        <div class="summary-row" id="discountRow" style="display:none"><span>تخفیف</span><span class="discount" id="discountText">۰ تومان</span></div>
+        <div class="coupon-box">
+          <div class="coupon-input-wrap">
+            <i class="fas fa-ticket-alt"></i>
+            <input type="text" id="couponInput" placeholder="کد تخفیف را وارد کنید">
+          </div>
+          <button type="button" id="applyCoupon">
+            <i class="fas fa-check"></i>
+            <span>اعمال</span>
+          </button>
+        </div>
+        <div class="summary-row total"><span>مبلغ قابل پرداخت</span><span id="totalText">۰ تومان</span></div>
+        <button class="btn btn-primary" id="goCheckout" disabled>
+          <i class="fas fa-credit-card"></i> ادامه و پرداخت
+        </button>
+        <a href="shop.html" class="btn btn-outline">ادامه خرید</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT VIEW -->
+<section class="cart-page checkout-section" id="checkoutSection">
+  <div class="container">
+    <div class="checkout-grid">
+      <div class="checkout-form">
+        <h2><i class="fas fa-user" style="margin-left:8px;color:var(--accent)"></i> اطلاعات گیرنده</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label>نام و نام خانوادگی *</label>
+            <input type="text" id="fullName" placeholder="نام کامل" required>
+          </div>
+          <div class="form-group">
+            <label>شماره موبایل *</label>
+            <input type="tel" id="phone" placeholder="0912xxxxxxx" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>استان / شهر *</label>
+          <input type="text" id="city" placeholder="مثلاً تهران، اصفهان" required>
+        </div>
+        <div class="form-group">
+          <label>آدرس کامل *</label>
+          <textarea id="address" placeholder="خیابان، پلاک، واحد..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>کد پستی</label>
+          <input type="text" id="postal" placeholder="کد پستی ۱۰ رقمی">
+        </div>
+
+        <h2 style="margin-top:28px"><i class="fas fa-wallet" style="margin-left:8px;color:var(--accent)"></i> انتخاب درگاه پرداخت</h2>
+        <div class="payment-gateways">
+          <label class="gateway-card active">
+            <input type="radio" name="gateway" value="zarinpal" checked>
+            <span class="gw-icon">🟡</span>
+            <div class="gw-name">زرین‌پال</div>
+            <div class="gw-desc">پرداخت امن آنلاین</div>
+          </label>
+          <label class="gateway-card">
+            <input type="radio" name="gateway" value="idpay">
+            <span class="gw-icon">🔵</span>
+            <div class="gw-name">آیدی‌پی</div>
+            <div class="gw-desc">درگاه پرداخت ایرانی</div>
+          </label>
+          <label class="gateway-card">
+            <input type="radio" name="gateway" value="nextpay">
+            <span class="gw-icon">🟢</span>
+            <div class="gw-name">نکست‌پی</div>
+            <div class="gw-desc">پرداخت سریع</div>
+          </label>
+          <label class="gateway-card">
+            <input type="radio" name="gateway" value="payping">
+            <span class="gw-icon">🟣</span>
+            <div class="gw-name">پی‌پینگ</div>
+            <div class="gw-desc">درگاه پرداخت آنلاین</div>
+          </label>
+        </div>
+      </div>
+
+      <aside class="cart-summary">
+        <h2>خلاصه پرداخت</h2>
+        <div id="checkoutItemsSummary"></div>
+        <div class="summary-row" style="margin-top:14px"><span>جمع جزء</span><span id="coSubtotal">۰ تومان</span></div>
+        <div class="summary-row"><span>ارسال</span><span>رایگان</span></div>
+        <div class="summary-row" id="coDiscountRow" style="display:none"><span>تخفیف</span><span class="discount" id="coDiscount">۰</span></div>
+        <div class="summary-row total"><span>قابل پرداخت</span><span id="coTotal">۰ تومان</span></div>
+        <button class="btn btn-primary" id="payBtn">
+          <i class="fas fa-lock"></i> پرداخت امن
+        </button>
+        <button class="btn btn-outline" id="backToCart">بازگشت به سبد</button>
+        <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6">
+          <i class="fas fa-shield-alt"></i> تراکنش شما از طریق درگاه امن بانکی انجام می‌شود
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Payment overlay -->
+<div class="pay-overlay" id="payOverlay">
+  <div class="pay-modal" id="payModal">
+    <div class="pay-icon loading" id="payIcon"><i class="fas fa-spinner fa-spin"></i></div>
+    <h2 id="payTitle">در حال اتصال به درگاه...</h2>
+    <p id="payMsg">لطفاً صبر کنید</p>
+    <div class="order-code" id="orderCode" style="display:none"></div>
+    <button class="btn btn-primary" id="payDoneBtn" style="display:none" onclick="location.href='index.html'">بازگشت به فروشگاه</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;justify-content:center">
+      <p>© ۱۴۰۳ قهوه پلاتو</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

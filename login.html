@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود | قهوه پلاتو</title>
+    <link rel="icon" href="favicon.ico?v=21" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=21">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=21">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=21">
+    <link rel="manifest" href="site.webmanifest?v=21">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-wrap">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="جستجو..." autocomplete="off">
+                <button class="search-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo"><a href="index.html"><img src="images/logo-header.png" alt="پلاتو قهوه | PLATO COFFEE" class="logo-img"></a></div>
+                <nav class="nav"><ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="shop.html">فروشگاه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="education.html">آموزش</a></li>
+                    <li><a href="blog.html">وبلاگ</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                </ul></nav>
+                <div class="header-actions">
+                    <button class="icon-btn" data-search-open><i class="fas fa-search"></i></button>
+                    <span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span>
+                    <button class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></button>
+                </div>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="auth-card">
+            <h1>ورود به حساب</h1>
+            <p class="auth-sub">به قهوه پلاتو خوش آمدید</p>
+            <div class="auth-error" id="loginError"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>ایمیل</label>
+                    <input type="email" id="loginEmail" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>رمز عبور</label>
+                    <input type="password" id="loginPass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary">ورود</button>
+            </form>
+            <p class="auth-switch">حساب ندارید؟ <a href="register.html">ثبت‌نام کنید</a></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;justify-content:center">
+                <p>© ۱۴۰۳ قهوه پلاتو</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

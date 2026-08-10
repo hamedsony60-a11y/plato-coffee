@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="90" viewBox="0 0 340 90">
+  <!-- Persian text -->
+  <text x="210" y="40" font-family="Tahoma, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#4a2c0a" text-anchor="end">قهوه پلاتو</text>
+  <!-- English -->
+  <text x="10" y="72" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#4a2c0a" letter-spacing="1.8">PILATO COFFEE</text>
+  <!-- Circular bean -->
+  <circle cx="280" cy="45" r="38" fill="#4a2c0a"/>
+  <!-- Cream curve matching the image style -->
+  <path d="M255 18 C270 28 270 40 255 50 C240 60 240 72 255 80 C275 70 295 55 295 40 C295 25 275 12 255 18Z" fill="#f5e6d3"/>
+</svg>

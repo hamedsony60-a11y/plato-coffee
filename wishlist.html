@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>علاقه‌مندی‌ها | قهوه پلاتو</title>
+    <link rel="icon" href="favicon.ico?v=21" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=21">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=21">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=21">
+    <link rel="manifest" href="site.webmanifest?v=21">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<style>
+.wishlist-page { padding: 40px 0 60px; }
+.wishlist-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8a7a6a;
+}
+.wishlist-empty i {
+  font-size: 3.5rem;
+  color: #e8ddd0;
+  margin-bottom: 16px;
+  display: block;
+}
+.wishlist-empty h3 {
+  font-size: 1.2rem;
+  color: #3d2b1f;
+  margin-bottom: 8px;
+}
+.wishlist-empty p { margin-bottom: 24px; }
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+.wish-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8ddd0;
+  overflow: hidden;
+  transition: box-shadow .25s, transform .25s;
+  position: relative;
+}
+.wish-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.wish-card .wish-img {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f8f4ef;
+}
+.wish-card .wish-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wish-card .remove-wish {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all .2s;
+  z-index: 2;
+}
+.wish-card .remove-wish:hover {
+  background: #e74c3c;
+  color: #fff;
+  transform: scale(1.08);
+}
+.wish-card .wish-info {
+  padding: 16px;
+}
+.wish-card .wish-info h3 {
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #3d2b1f;
+}
+.wish-card .wish-info .price {
+  font-weight: 700;
+  color: #c17f4a;
+  margin-bottom: 12px;
+  font-size: .95rem;
+}
+.wish-card .wish-info .btn {
+  width: 100%;
+  font-size: .85rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+.header-actions .wish-btn {
+  position: relative;
+}
+.header-actions .wish-count {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-top">
+      <div class="logo"><a href="index.html"><img src="images/logo-header.png" alt="قهوه پلاتو" class="logo-img"></a></div>
+      <nav class="nav"><ul>
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="shop.html">فروشگاه</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+        <li><a href="education.html">آموزش</a></li>
+        <li><a href="blog.html">وبلاگ</a></li>
+        <li><a href="contact.html">تماس با ما</a></li>
+      </ul></nav>
+      <div class="header-actions">
+        <button class="icon-btn" data-search-open><i class="fas fa-search"></i></button>
+        <a href="wishlist.html" class="icon-btn wish-btn" aria-label="علاقه‌مندی‌ها">
+          <i class="fas fa-heart" style="color:#e74c3c"></i>
+          <span class="wish-count" data-wish-count>0</span>
+        </a>
+        <span data-user-area><a href="login.html" class="icon-btn"><i class="far fa-user"></i></a></span>
+        <a href="cart.html" class="icon-btn cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      </div>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1><i class="fas fa-heart" style="color:#e74c3c;margin-left:8px"></i> علاقه‌مندی‌ها</h1>
+    <p>محصولاتی که دوست دارید</p>
+  </div>
+</section>
+
+<section class="wishlist-page">
+  <div class="container">
+    <div id="wishlistContainer">
+      <div class="wishlist-empty">
+        <i class="far fa-heart"></i>
+        <h3>لیست علاقه‌مندی‌ها خالی است</h3>
+        <p>محصولات مورد علاقه‌تان را با زدن روی قلب ذخیره کنید</p>
+        <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;justify-content:center">
+      <p>© ۱۴۰۳ قهوه پلاتو</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const PRODUCTS = {
+  '1': { name: 'آسیاب قهوه دستی', price: '۱,۲۵۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&q=80', href: 'product-1.html' },
+  '2': { name: 'پیچر استیل ۶۰۰ میلی', price: '۴۸۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80', href: 'product-2.html' },
+  '3': { name: 'اسپرسوساز دلونگی', price: '۱۲,۹۰۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400&q=80', href: 'product-3.html' },
+  '4': { name: 'دانه قهوه اتیوپی', price: '۳۸۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1610889556528-4c77b0e2e0e6?w=400&q=80', href: 'product-4.html' },
+  '5': { name: 'موکاپات بیالتی', price: '۹۸۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80', href: 'product-5.html' },
+  '6': { name: 'فیلتر کاغذی V60', price: '۹۵,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80', href: 'product-6.html' },
+  '7': { name: 'تمپر ۵۸ میلی', price: '۳۲۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80', href: 'product-7.html' },
+  '8': { name: 'دانه قهوه کلمبیا', price: '۴۲۰,۰۰۰ تومان', img: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80', href: 'product-8.html' },
+};
+
+function renderWishlist() {
+  const list = JSON.parse(localStorage.getItem('plato_wishlist') || '[]');
+  const box = document.getElementById('wishlistContainer');
+  if (!list.length) {
+    box.innerHTML = `<div class="wishlist-empty">
+      <i class="far fa-heart"></i>
+      <h3>لیست علاقه‌مندی‌ها خالی است</h3>
+      <p>محصولات مورد علاقه‌تان را با زدن روی قلب ذخیره کنید</p>
+      <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
+    </div>`;
+    return;
+  }
+  let html = '<div class="wish-grid">';
+  list.forEach(id => {
+    const p = PRODUCTS[String(id)];
+    if (!p) return;
+    html += `<div class="wish-card" data-id="${id}">
+      <div class="wish-img">
+        <a href="${p.href}"><img src="${p.img}" alt="${p.name}"></a>
+        <button class="remove-wish" data-id="${id}" title="حذف از علاقه‌مندی‌ها"><i class="fas fa-heart"></i></button>
+      </div>
+      <div class="wish-info">
+        <h3><a href="${p.href}" style="color:inherit;text-decoration:none">${p.name}</a></h3>
+        <div class="price">${p.price}</div>
+        <button class="btn btn-primary add-to-cart" data-id="${id}" data-name="${p.name}">
+          <i class="fas fa-shopping-bag"></i> افزودن به سبد
+        </button>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  box.innerHTML = html;
+
+  box.querySelectorAll('.remove-wish').forEach(btn => {
+    btn.addEventListener('click', () => {
+      let w = JSON.parse(localStorage.getItem('plato_wishlist') || '[]');
+      w = w.filter(x => String(x) !== String(btn.dataset.id));
+      localStorage.setItem('plato_wishlist', JSON.stringify(w));
+      if (typeof updateBadges === 'function') updateBadges();
+      renderWishlist();
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', renderWishlist);
+</script>
+</body>
+</html>
